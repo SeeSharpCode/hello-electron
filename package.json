@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make --target zip"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "keywords": [],
   "author": "Breems",
@@ -16,10 +16,8 @@
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
     "electron": "^11.2.1"
   },
   "dependencies": {
@@ -29,24 +27,23 @@
   "config": {
     "forge": {
       "packagerConfig": {},
-      "publishers": {
-        "name": "@electron-forge/publisher-github",
-        "config": {
-          "repository": {
-            "owner": "SeeSharpCode",
-            "name": "hello-electron"
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "SeeSharpCode",
+              "name": "hello-electron"
+            }
           }
         }
-      },
+      ],
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "my_electron_app"
           }
-        },
-        {
-          "name": "@electron-forge/maker-zip"
         }
       ]
     }
