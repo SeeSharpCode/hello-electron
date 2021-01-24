@@ -1,0 +1,54 @@
+{
+  "name": "hello-electron",
+  "version": "1.0.0",
+  "description": "My little app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make --target zip"
+  },
+  "keywords": [],
+  "author": "Breems",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/SeeSharpCode/hello-electron"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "^11.2.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "update-electron-app": "^2.0.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "publishers": {
+        "name": "@electron-forge/publisher-github",
+        "config": {
+          "repository": {
+            "owner": "SeeSharpCode",
+            "name": "hello-electron"
+          }
+        }
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "my_electron_app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip"
+        }
+      ]
+    }
+  }
+}
