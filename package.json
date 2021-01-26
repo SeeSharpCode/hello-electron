@@ -1,7 +1,7 @@
 {
-  "name": "hello-electron",
-  "version": "2.0.0",
-  "description": "My little app",
+  "name": "nova-gummy",
+  "version": "1.0.0",
+  "description": "Novalogic game updater and mod manager",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,7 +12,7 @@
   "author": "Breems",
   "license": "ISC",
   "repository": {
-    "url": "https://github.com/SeeSharpCode/hello-electron"
+    "url": "https://github.com/SeeSharpCode/nova-gummy"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
@@ -21,7 +21,9 @@
     "electron": "^11.2.1"
   },
   "dependencies": {
+    "electron-dl": "^3.0.2",
     "electron-squirrel-startup": "^1.0.0",
+    "unzipper": "^0.10.11",
     "update-electron-app": "^2.0.1"
   },
   "config": {
@@ -33,8 +35,9 @@
           "config": {
             "repository": {
               "owner": "SeeSharpCode",
-              "name": "hello-electron"
-            }
+              "name": "nova-gummy"
+            },
+            "draft": false
           }
         }
       ],
@@ -42,7 +45,8 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "my_electron_app"
+            "name": "nova-gummy",
+            "loadingGif": "./loading.gif"
           }
         }
       ]

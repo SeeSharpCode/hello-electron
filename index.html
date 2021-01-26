@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Nova Gummy</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/superhero/bulmaswatch.min.css">
 </head>
-<body style="background: white;">
-    <h1>Hello World v2!</h1>
-    <p>
-        We are using node <script>document.write(process.versions.node)</script>,
-        Chrome <script>document.write(process.versions.chrome)</script>,
-        and Electron <script>document.write(process.versions.electron)</script>.
-    </p>
+
+<body>
+    <div class="columns" style="margin-left: .1rem; margin-top: .1rem;">
+        <div class="column is-3 has-background-primary-dark">
+            <aside class="menu">
+                <p class="menu-label">
+                    Games
+                </p>
+                <ul class="menu-list">
+                    <li><a>Delta Force 2</a></li>
+            </aside>
+        </div>
+        <div class="column">
+            <h1 class="title">
+                Hello World
+            </h1>
+            <p class="subtitle">
+                My first website with <strong>Bulma</strong>!
+            </p>
+            <button id="download-button" class="button is-primary">Download</button>
+            <button id="write-file" class="button is-primary">Write File</button>
+        </div>
+    </div>
+
+    <script>
+        require('./renderer.js');
+    </script>
 </body>
+
 </html>
