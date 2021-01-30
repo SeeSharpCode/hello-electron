@@ -12,12 +12,12 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true
     },
-    icon: 'df2.png',
-    darkTheme: true
+    icon: 'df2.png'
   });
 
   const configPath = path.join(app.getPath('userData'), 'config.json');
@@ -45,7 +45,7 @@ function createWindow() {
   //     ]
   //   }
   // ]);
-  Menu.setApplicationMenu(Menu.buildFromTemplate(menuItems));
+  // Menu.setApplicationMenu(Menu.buildFromTemplate(menuItems));
 
   win.loadFile('index.html');
 

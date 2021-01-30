@@ -5,32 +5,60 @@
     <meta charset="UTF-8">
     <title>Nova Gummy</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/superhero/bulmaswatch.min.css">
+    <!-- <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/superhero/bulmaswatch.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+
+    <style>
+        body,
+        html {
+            margin: 0;
+        }
+
+        #main-window {
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .title-bar {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            -webkit-app-region: drag;
+        }
+
+        .title-bar-controls {
+            -webkit-app-region: no-drag;
+        }
+
+        h5 {
+            font-size: large;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="columns" style="margin-left: .1rem; margin-top: .1rem;">
-        <div class="column is-3 has-background-primary-dark">
-            <aside class="menu">
-                <p class="menu-label">
-                    Games
-                </p>
-                <ul class="menu-list">
-                    <li><a>Delta Force 2</a></li>
-            </aside>
+    <div id="main-window" class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">Nova Gummy</div>
+            <div class="title-bar-controls">
+                <button id="minimize-button" aria-label="Minimize"></button>
+                <button id="maximize-button" aria-label="Maximize"></button>
+                <button id="close-button" aria-label="Close"></button>
+            </div>
         </div>
-        <div class="column">
-            <h1 class="title">
-                Hello World
-            </h1>
-            <p class="subtitle">
-                My first website with <strong>Bulma</strong>!
-            </p>
-            <button id="download-button" class="button is-primary">Download</button>
-            <button id="write-file" class="button is-primary">Write File</button>
+        <div class="window-body">
+            <div>
+                <select id="current-game">
+                    <option value="" disabled selected>Select a game</option>
+                </select>
+                <button id="add-game" style="margin-left: 5px;">Add Game</button>
+            </div>
+            <div>
+                <div>
+                    <h5><img width="64" height="64" style="vertical-align: middle;" src='df2.jpg'> DF2 Complete Fixes</h5>
+                </div>
+            </div>
         </div>
     </div>
-
     <script>
         require('./renderer.js');
     </script>
